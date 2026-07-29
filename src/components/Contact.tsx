@@ -98,13 +98,13 @@ export default function Contact() {
                             <div className="mt-8 pt-6 border-t border-gray-200/80">
                                 <p className="text-xs font-medium text-gray-400 mb-3">{t.contact.followMe}</p>
                                 <div className="flex gap-3">
-                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-gray-900 hover:text-white transition-all duration-300">
+                                    <a href="https://github.com/bimbimm25" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-gray-900 hover:text-white transition-all duration-300">
                                         <FaGithub size={16} />
                                     </a>
-                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#0A66C2] hover:text-white transition-all duration-300">
+                                    <a href="https://www.linkedin.com/in/bima-ardiansyah-062016353/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#0A66C2] hover:text-white transition-all duration-300">
                                         <FaLinkedin size={16} />
                                     </a>
-                                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#E4405F] hover:text-white transition-all duration-300">
+                                    <a href="https://instagram.com/bimm.zhr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#E4405F] hover:text-white transition-all duration-300">
                                         <FaInstagram size={16} />
                                     </a>
                                 </div>

@@ -22,15 +22,15 @@ export default function Footer() {
 
                 {/* Right: Social Media Links */}
                 <div className="flex items-center gap-5">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
+                    <a href="https://github.com/bimbimm25" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
                         <FaGithub size={14} />
                         <span>GitHub</span>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
+                    <a href="https://www.linkedin.com/in/bima-ardiansyah-062016353/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
                         <FaLinkedin size={14} />
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
+                    <a href="https://instagram.com/bimm.zhr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
                         <FaInstagram size={14} />
                         <span>Instagram</span>
                     </a>
