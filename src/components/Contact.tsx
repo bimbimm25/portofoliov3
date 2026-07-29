@@ -189,7 +189,6 @@ export default function Contact() {
                             </button>
                         </form>
                     </motion.div>
-
                 </div>
             </div>
         </section>

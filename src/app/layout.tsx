@@ -14,7 +14,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bimaardiansyah.my.i
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Bima Ardiansyah | Fullstack Web Developer Portfolio",
+    default: "Bima Ardiansyah | Fullstack Web Developer",
     template: "%s | Bima Ardiansyah",
   },
   description:
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Bima Ardiansyah | Fullstack Web Developer Portfolio",
     description:
       "Jelajahi proyek web modern, keahlian teknis, dan pengalaman Bima Ardiansyah sebagai Fullstack Web Developer.",
-    siteName: "Bima Ardiansyah Portfolio",
+    siteName: "Bima Ardiansyah",
     images: [
       {
         url: "/og-image.png", // Buat file gambarmu di public/og-image.png (1200x630 px)
@@ -105,7 +105,7 @@ export default function RootLayout({
     },
     sameAs: [
       "https://github.com/bimbimm25",
-      "https://linkedin.com",
+      "https://www.linkedin.com/in/bima-ardiansyah-062016353/",
       "https://www.instagram.com/bimm.zhr",
     ],
     knowsAbout: [
