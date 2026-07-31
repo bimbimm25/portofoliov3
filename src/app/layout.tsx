@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: siteUrl,
-    title: "Bima Ardiansyah | Fullstack Web Developer Portfolio",
+    title: "Bima Ardiansyah | Fullstack Web Developer",
     description:
       "Jelajahi proyek web modern, keahlian teknis, dan pengalaman Bima Ardiansyah sebagai Fullstack Web Developer.",
     siteName: "Bima Ardiansyah",
