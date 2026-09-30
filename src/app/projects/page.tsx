@@ -24,7 +24,7 @@ export default function ProjectsPage() {
     const projectsData = t.projectsPage.items;
 
     type ProjectItem = typeof projectsData[0] & {
-        type?: "freelance" | "personal" | "demo";
+        type?: "freelance" | "personal" | "demo" | string;
         testimonial?: {
             quote: string;
             clientName: string;
@@ -54,15 +54,40 @@ export default function ProjectsPage() {
         };
     }, [activeProject]);
 
+    // NORMALISASI TIPE & KATEGORI AGAR COCOK DI BAHASA INDONESIA & ENGLISH
+    const normalizeType = (type?: string) => {
+        if (!type) return "";
+        const clean = type.trim().toLowerCase();
+        if (clean === "personal" || clean === "pribadi") return "personal";
+        if (clean === "demo") return "demo";
+        if (clean === "freelance") return "freelance";
+        return clean;
+    };
+
+    const normalizeCategory = (category?: string) => {
+        if (!category) return "";
+        const clean = category.trim().toLowerCase();
+        if (clean === "fullstack" || clean === "full-stack") return "fullstack";
+        if (clean === "frontend" || clean === "front-end") return "frontend";
+        if (clean === "backend" || clean === "back-end") return "backend";
+        return clean;
+    };
+
     // FILTER GANDA
     const filteredProjects = (projectsData as ProjectItem[]).filter((p) => {
+        const projectCategory = normalizeCategory(p.category);
+        const filterCategory = normalizeCategory(selectedCategory);
+
         const matchesCategory =
             selectedCategory === "All" ||
-            p.category.toLowerCase() === selectedCategory.toLowerCase();
+            projectCategory === filterCategory;
+
+        const projectType = normalizeType(p.type);
+        const filterType = normalizeType(selectedType);
 
         const matchesType =
             selectedType === "All" ||
-            p.type?.toLowerCase() === selectedType.toLowerCase();
+            projectType === filterType;
 
         return matchesCategory && matchesType;
     });
@@ -122,8 +147,8 @@ export default function ProjectsPage() {
                                     key={idx}
                                     onClick={() => setSelectedType(type)}
                                     className={`px-3 py-1 text-[11px] font-semibold rounded-lg transition-all duration-200 cursor-pointer ${selectedType === type
-                                            ? "bg-amber-500 text-white shadow-xs"
-                                            : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900"
+                                        ? "bg-amber-500 text-white shadow-xs"
+                                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900"
                                         }`}
                                 >
                                     {type === "All" ? "All" : type}
@@ -138,8 +163,8 @@ export default function ProjectsPage() {
                                     key={idx}
                                     onClick={() => setSelectedCategory(cat)}
                                     className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 cursor-pointer ${selectedCategory === cat
-                                            ? "bg-gray-900 text-white shadow-xs"
-                                            : "bg-white text-gray-600 border border-gray-200/80 hover:border-gray-300 hover:text-gray-900"
+                                        ? "bg-gray-900 text-white shadow-xs"
+                                        : "bg-white text-gray-600 border border-gray-200/80 hover:border-gray-300 hover:text-gray-900"
                                         }`}
                                 >
                                     {cat}
@@ -163,12 +188,11 @@ export default function ProjectsPage() {
                         >
                             {filteredProjects.map((project, index) => {
                                 const isMobileActive = activeMobileCardId === project.id;
-                                const isFreelance = project.type?.toLowerCase() === "freelance";
+                                const isFreelance = normalizeType(project.type) === "freelance";
 
                                 return (
                                     <motion.div
                                         key={project.id}
-                                        /* Animasi perlahan muncul halus (Fade In Soft + Stagger) */
                                         initial={{ opacity: 0, y: 12 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -10 }}
@@ -187,8 +211,8 @@ export default function ProjectsPage() {
                                                 fill
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                 className={`object-contain p-1 rounded-lg transition-all duration-500 ${isMobileActive
-                                                        ? "grayscale-0"
-                                                        : "grayscale group-hover:grayscale-0"
+                                                    ? "grayscale-0"
+                                                    : "grayscale group-hover:grayscale-0"
                                                     }`}
                                                 onError={(e) => {
                                                     e.currentTarget.style.display = 'none';
@@ -208,8 +232,8 @@ export default function ProjectsPage() {
                                                     </span>
                                                     {project.type && (
                                                         <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md ${isFreelance
-                                                                ? "bg-amber-50 text-amber-700 border border-amber-200/60"
-                                                                : "bg-blue-50 text-blue-700 border border-blue-200/60"
+                                                            ? "bg-amber-50 text-amber-700 border border-amber-200/60"
+                                                            : "bg-blue-50 text-blue-700 border border-blue-200/60"
                                                             }`}>
                                                             {project.type}
                                                         </span>
@@ -293,7 +317,6 @@ export default function ProjectsPage() {
                             })}
                         </motion.div>
                     ) : (
-                        /* TAMPILAN ELEGAN SAAT PROJECT KOSONG (EMPTY STATE) */
                         <motion.div
                             key="empty-state"
                             initial={{ opacity: 0, y: 10 }}
@@ -328,7 +351,7 @@ export default function ProjectsPage() {
                 </AnimatePresence>
             </div>
 
-            {/* Pop-up Modal View Detail (Animasi Halus) */}
+            {/* Pop-up Modal View Detail */}
             <AnimatePresence>
                 {activeProject && (
                     <div
@@ -343,7 +366,6 @@ export default function ProjectsPage() {
                             onClick={(e) => e.stopPropagation()}
                             className="bg-white border border-gray-200 rounded-2xl max-w-md md:max-w-lg w-full p-5 md:p-6 shadow-2xl relative flex flex-col max-h-[90vh] overflow-y-auto"
                         >
-                            {/* Tombol Close */}
                             <button
                                 onClick={() => setActiveProject(null)}
                                 className="absolute top-4 right-4 z-10 p-1.5 bg-white/90 backdrop-blur-md text-gray-600 hover:text-gray-900 rounded-full transition-colors cursor-pointer shadow-sm border border-gray-200"
@@ -351,7 +373,6 @@ export default function ProjectsPage() {
                                 <X size={18} />
                             </button>
 
-                            {/* Gambar Preview */}
                             <div className="relative w-full h-40 sm:h-48 bg-gray-50 rounded-xl overflow-hidden mb-4 shrink-0 border border-gray-200/80 p-2 flex items-center justify-center">
                                 <Image
                                     src={activeProject.image}
@@ -361,7 +382,6 @@ export default function ProjectsPage() {
                                 />
                             </div>
 
-                            {/* Detail Deskripsi */}
                             <div className="mb-4">
                                 <div className="flex gap-2 mb-2">
                                     <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 border border-gray-100 px-2 py-0.5 rounded-md">
@@ -382,8 +402,7 @@ export default function ProjectsPage() {
                                     {activeProject.desc}
                                 </p>
 
-                                {/* Testimonial Lengkap */}
-                                {activeProject.type?.toLowerCase() === "freelance" && activeProject.testimonial && (
+                                {normalizeType(activeProject.type) === "freelance" && activeProject.testimonial && (
                                     <div className="mb-4 p-4 bg-amber-50/60 border border-amber-200/80 rounded-xl relative">
                                         <Quote size={18} className="text-amber-500 mb-2" />
                                         <p className="text-xs text-amber-950 italic leading-relaxed mb-3">
@@ -428,7 +447,6 @@ export default function ProjectsPage() {
                                 </div>
                             </div>
 
-                            {/* Tombol Aksi */}
                             <div className="flex gap-3 pt-4 border-t border-gray-100 mt-auto">
                                 {activeProject.demoUrl && (
                                     <a
