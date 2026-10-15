@@ -133,6 +133,17 @@ const translations = {
             backHome: "Kembali ke Home",
             items: [
                 {
+                    id: "tomeetcafe",
+                    title: "Website Tomeet Cafe",
+                    category: "Fullstack",
+                    type: "freelance", // <- Ditambahkan
+                    image: "/projects/web-tmc.png",
+                    desc: "Website cafe elegan dengan dashboard admin untuk kelola menu, merchandise, career, dan lain-lain serta terintegrasi dengan WhatsApp untuk reservasi.",
+                    techs: ["Laravel", "Next.js", "Tailwind CSS", "MySQL"],
+                    demoUrl: "tomeetcafe.id",
+                    githubUrl: "",
+                },
+                {
                     id: "kantin-digital",
                     title: "Aplikasi Kantin Digital",
                     category: "Fullstack",
@@ -177,17 +188,6 @@ const translations = {
                     githubUrl: "https://github.com/bimbimm25/rental-mobil.git",
                 },
                 
-                {
-                    id: "web-cafe1",
-                    title: "Website Tomeet Cafe",
-                    category: "Frontend",
-                    type: "demo", // <- Ditambahkan
-                    image: "/projects/web-cafe1.png",
-                    desc: "Website cafe elegan dengan sistem reservasi yang otomatis terintegrasi dengan WhatsApp.",
-                    techs: ["Next.js", "Tailwind"],
-                    demoUrl: "https://tomeet-cafe.vercel.app/",
-                    githubUrl: "https://github.com/bimbimm25/tomeet-cafe.git",
-                },
                 {
                     id: "web-cafe2",
                     title: "Website Cafe Sidoarjo",
@@ -308,6 +308,17 @@ const translations = {
                     certificateUrl: "https://drive.google.com/file/d/1P2H-MxzGuU85vRIbs5Q2-WsgDBr31V0y/view?usp=drive_link",
                     description: "Berpartisipasi aktif dalam ajang mini kompetisi Dev Weekend, mengembangkan model machine learning dan mengoptimalkan tampilan website.",
                     skills: ["Machine Learning", "Laravel", "Tailwind"],
+                },
+                {
+                    id: "pixelnoid-2",
+                    title: "Pixelnoid Program Basic Web Development",
+                    role: "Pelajar",
+                    issuer: "Pixelnoid",
+                    date: "3 Agustus 2026",
+                    location: "Online",
+                    certificateUrl: "https://drive.google.com/file/d/1PI1EE8YG2cwQ6I6jCbtzchAVMSwf6fNJ/view?usp=drive_link",
+                    description: "Mengikuti program pembelajaran pengembangan web dasar yang diselenggarakan oleh Pixelnoid, mempelajari konsep dasar HTML, CSS, JavaScript , PHP , dan MySQL. ",
+                    skills: ["HTML", "CSS", "JavaScript" , "PHP", "MySQL"],
                 }
             ]
         },
@@ -444,6 +455,17 @@ const translations = {
             backHome: "Back to Home",
             items: [
                 {
+                    id: "tomeetcafe",
+                    title: "Website Tomeet Cafe",
+                    category: "Fullstack",
+                    type: "freelance", // <- Ditambahkan
+                    image: "/projects/web-tmc.png",
+                    desc: "An elegant cafe website with an admin dashboard to manage menus, merchandise, careers, and more, integrated with WhatsApp for reservations.",
+                    techs: ["Laravel", "Next.js", "Tailwind CSS", "MySQL"],
+                    demoUrl: "tomeetcafe.id",
+                    githubUrl: "",
+                },
+                {
                     id: "kantin-digital",
                     title: "Digital Canteen App",
                     category: "Fullstack",
@@ -486,17 +508,6 @@ const translations = {
                     techs: ["Next.js", "Tailwind"],
                     demoUrl: "https://rental-mobil-abs.vercel.app/",
                     githubUrl: "https://github.com/bimbimm25/rental-mobil.git",
-                },
-                {
-                    id: "web-cafe1",
-                    title: "Tomeet Cafe Website",
-                    category: "Frontend",
-                    type: "demo",
-                    image: "/projects/web-cafe1.png",
-                    desc: "An elegant cafe website with an automated reservation system integrated with WhatsApp.",
-                    techs: ["Next.js", "Tailwind"],
-                    demoUrl: "https://tomeet-cafe.vercel.app/",
-                    githubUrl: "https://github.com/bimbimm25/tomeet-cafe.git",
                 },
                 {
                     id: "web-cafe2",
@@ -618,6 +629,17 @@ const translations = {
                     certificateUrl: "https://drive.google.com/file/d/1P2H-MxzGuU85vRIbs5Q2-WsgDBr31V0y/view?usp=drive_link",
                     description: "Actively participated in the Dev Weekend mini competition, developing machine learning models and optimizing website frontend performance.",
                     skills: ["Machine Learning", "Laravel", "Tailwind"],
+                },
+                {
+                    id: "pixelnoid-2",
+                    title: "Pixelnoid Program Basic Web Development",
+                    role: "Student",
+                    issuer: "Pixelnoid",
+                    date: "3 August 2026",
+                    location: "Online",
+                    certificateUrl: "https://drive.google.com/file/d/1PI1EE8YG2cwQ6I6jCbtzchAVMSwf6fNJ/view?usp=drive_link",
+                    description: "Participated in the basic web development learning program organized by Pixelnoid, learning fundamental concepts of HTML, CSS, JavaScript, PHP, and MySQL.",
+                    skills: ["HTML", "CSS", "JavaScript" , "PHP", "MySQL"],
                 }
             ]
         },
