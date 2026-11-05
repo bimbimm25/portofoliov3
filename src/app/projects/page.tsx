@@ -204,24 +204,43 @@ export default function ProjectsPage() {
                                         onClick={(e) => handleCardTap(e, project.id)}
                                         className="bg-white border border-gray-200/80 rounded-2xl overflow-hidden shadow-[0_2px_10px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_25px_-8px_rgba(0,0,0,0.08)] hover:border-gray-300 transition-all duration-300 flex flex-col group cursor-pointer"
                                     >
-                                        <div className="relative w-full aspect-video bg-gray-50 border-b border-gray-100 p-2 overflow-hidden flex items-center justify-center">
+                                        <div className="relative w-full aspect-video bg-gray-50 border-b border-gray-100 p-2 overflow-hidden flex items-center justify-center group/image">
+                                            {/* Gambar Preview */}
                                             <Image
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                 className={`object-contain p-1 rounded-lg transition-all duration-500 ${isMobileActive
-                                                    ? "grayscale-0"
-                                                    : "grayscale group-hover:grayscale-0"
+                                                        ? "grayscale-0"
+                                                        : "grayscale group-hover:grayscale-0 group-hover/image:scale-[1.03]"
                                                     }`}
                                                 onError={(e) => {
                                                     e.currentTarget.style.display = 'none';
                                                 }}
                                             />
+
+                                            {/* Fallback Jika Gambar Error */}
                                             <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 text-gray-300 -z-10">
                                                 <FolderGit2 size={32} strokeWidth={1.5} />
                                                 <span className="text-xs mt-1">Project Preview</span>
                                             </div>
+
+                                            {/* OVERLAY TOMBOL "VISIT WEBSITE" KETIKA DI-HOVER (Hanya muncul jika demoUrl ada) */}
+                                            {project.demoUrl && (
+                                                <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover/image:opacity-100 transition-all duration-300 flex items-center justify-center z-20 pointer-events-none group-hover/image:pointer-events-auto">
+                                                    <a
+                                                        href={project.demoUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        onClick={(e) => e.stopPropagation()}
+                                                        className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-900 text-xs font-semibold rounded-full shadow-lg hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all duration-200 transform translate-y-2 group-hover/image:translate-y-0 cursor-pointer"
+                                                    >
+                                                        <span>Visit Website</span>
+                                                        <ExternalLink size={13} className="text-gray-700" />
+                                                    </a>
+                                                </div>
+                                            )}
                                         </div>
 
                                         <div className="p-5 flex flex-col flex-1">
