@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
     SiReact,
     SiNextdotjs,
@@ -21,7 +20,6 @@ export default function TechStack() {
     const { t } = useLanguage();
     const [activeTechId, setActiveTechId] = useState<string | null>(null);
 
-    // Data kategori dinamis mengambil judul dan deskripsi dari LanguageContext
     const techCategories = [
         {
             title: t.techStack.categories.frontend.title,
@@ -71,11 +69,7 @@ export default function TechStack() {
 
     const handleTechTap = (e: React.MouseEvent, uniqueId: string) => {
         e.stopPropagation();
-        if (activeTechId === uniqueId) {
-            setActiveTechId(null);
-        } else {
-            setActiveTechId(uniqueId);
-        }
+        setActiveTechId((prev) => (prev === uniqueId ? null : uniqueId));
     };
 
     const handleReset = () => {
@@ -104,25 +98,23 @@ export default function TechStack() {
             {/* Infinite Slider Container */}
             <div className="relative flex items-center w-full">
 
-                {/* Efek Gradasi / Fade Blur */}
-                <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-linear-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-linear-to-l from-[#f8f9fa] to-transparent z-10 pointer-events-none"></div>
+                {/* Efek Gradasi Sisi Kiri & Kanan */}
+                <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#f8f9fa] to-transparent z-10 pointer-events-none"></div>
 
-                {/* Wrapper Animasi Framer Motion */}
-                <motion.div
-                    className="flex w-max will-change-transform"
-                    animate={isPaused ? false : { x: ["0%", "-50%"] }}
-                    transition={{
-                        ease: "linear",
-                        duration: 35,
-                        repeat: Infinity,
-                        repeatType: "loop"
+                {/* Wrapper Animasi Pure CSS Hardware-Accelerated */}
+                <div
+                    className="flex w-max will-change-transform transform-gpu animate-marquee-smooth"
+                    style={{
+                        animationPlayState: isPaused ? "paused" : "running",
+                        backfaceVisibility: "hidden",
+                        WebkitBackfaceVisibility: "hidden",
                     }}
                 >
                     {duplicatedCategories.map((category, catIdx) => (
                         <div
                             key={catIdx}
-                            className="mr-5 min-w-70 md:min-w-85 bg-white/60 backdrop-blur-xs border border-gray-200/80 p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:bg-white hover:shadow-sm transition-all duration-300 cursor-default"
+                            className="mr-5 min-w-[280px] md:min-w-[340px] bg-white border border-gray-200/80 p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:shadow-sm transition-all duration-300 cursor-default"
                         >
                             <h3 className="text-xl font-bold text-gray-800 mb-1.5">
                                 {category.title}
@@ -145,16 +137,16 @@ export default function TechStack() {
                                             title={tech.name}
                                         >
                                             <div className={`w-12 h-12 md:w-14 md:h-14 bg-white border rounded-full flex items-center justify-center transition-all duration-300 ${isActiveOnMobile
-                                                    ? "border-gray-900 shadow-md scale-110"
-                                                    : "border-gray-100 shadow-xs group-hover:shadow-md group-hover:border-gray-200"
+                                                ? "border-gray-900 shadow-md scale-110"
+                                                : "border-gray-100 shadow-xs group-hover:shadow-md group-hover:border-gray-200"
                                                 }`}>
                                                 {tech.icon}
                                             </div>
 
                                             {/* Nama Logo / Pop-up Mini */}
                                             <span className={`text-[11px] font-semibold text-gray-700 transition-all duration-200 ${isActiveOnMobile
-                                                    ? "opacity-100 translate-y-0"
-                                                    : "opacity-0 translate-y-1 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0"
+                                                ? "opacity-100 translate-y-0"
+                                                : "opacity-0 translate-y-1 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-hover:translate-y-0"
                                                 }`}>
                                                 {tech.name}
                                             </span>
@@ -164,7 +156,7 @@ export default function TechStack() {
                             </div>
                         </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

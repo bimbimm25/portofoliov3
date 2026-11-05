@@ -144,6 +144,17 @@ const translations = {
                     githubUrl: "",
                 },
                 {
+                    id: "marketplace-game",
+                    title: "Marketplace Game",
+                    category: "Fullstack",
+                    type: "personal", // <- Ditambahkan
+                    image: "/projects/aekonezt-marketplace.png",
+                    desc: "Website marketplace untuk jual beli akun game online dengan sistem pembayaran digital. Fitur meliputi manajemen akun, transaksi, dan integrasi API pembayaran.",
+                    techs: ["Laravel", "Tailwind CSS", "MySQL"],
+                    demoUrl: "",
+                    githubUrl: "",
+                },
+                {
                     id: "kantin-digital",
                     title: "Aplikasi Kantin Digital",
                     category: "Fullstack",
@@ -463,6 +474,17 @@ const translations = {
                     desc: "An elegant cafe website with an admin dashboard to manage menus, merchandise, careers, and more, integrated with WhatsApp for reservations.",
                     techs: ["Laravel", "Next.js", "Tailwind CSS", "MySQL"],
                     demoUrl: "tomeetcafe.id",
+                    githubUrl: "",
+                },
+                {
+                    id: "marketplace-game",
+                    title: "Marketplace Game",
+                    category: "Fullstack",
+                    type: "personal", // <- Ditambahkan
+                    image: "/projects/aekonezt-marketplace.png",
+                    desc: "A marketplace website for buying and selling online game accounts with a digital payment system. Features include account management, transactions, and payment API integration.",
+                    techs: ["Laravel", "Tailwind CSS", "MySQL"],
+                    demoUrl: "",
                     githubUrl: "",
                 },
                 {
