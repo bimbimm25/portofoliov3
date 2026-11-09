@@ -30,7 +30,7 @@ export default function Footer() {
                         <FaLinkedin size={14} />
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://instagram.com/bimm.zhr" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
+                    <a href="https://instagram.com/bimm.syhh" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors flex items-center gap-1.5">
                         <FaInstagram size={14} />
                         <span>Instagram</span>
                     </a>

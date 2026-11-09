@@ -104,8 +104,8 @@ export default function Contact() {
                                     <a href="https://www.linkedin.com/in/bima-ardiansyah-062016353/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#0A66C2] hover:text-white transition-all duration-300">
                                         <FaLinkedin size={16} />
                                     </a>
-                                    <a href="https://instagram.com/bimm.zhr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#E4405F] hover:text-white transition-all duration-300">
-                                        <FaInstagram size={16} />
+                                    <a href="https://instagram.com/bimm.syhh" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white rounded-full flex items-center justify-center text-gray-600 shadow-xs border border-gray-100 hover:bg-[#E4405F] hover:text-white transition-all duration-300">
+                                        <FaInstagram size={16} />       
                                     </a>
                                 </div>
                             </div>
