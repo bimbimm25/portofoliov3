@@ -155,6 +155,17 @@ const translations = {
                     githubUrl: "",
                 },
                 {
+                    id: "mindora",
+                    title: "Mindora",
+                    category: "Fullstack",
+                    type: "personal", // <- Ditambahkan
+                    image: "/projects/mindora.png",
+                    desc: "MINDORA adalah platform web pendamping kesehatan mental (mental wellness companion) yang dirancang dengan pendekatan hangat, tenang, dan privat (gentle wellness) untuk membantu pengguna mengenali, merawat, dan memahami kondisi emosionalnya sehari-hari.",
+                    techs: ["Next.js", "Tailwind CSS", "Supabase"],
+                    demoUrl: "mindora-ivory.vercel.app",
+                    githubUrl: "https://github.com/bimbimm25/mindora.git",
+                },
+                {
                     id: "kantin-digital",
                     title: "Aplikasi Kantin Digital",
                     category: "Fullstack",
@@ -486,6 +497,17 @@ const translations = {
                     techs: ["Laravel", "Tailwind CSS", "MySQL"],
                     demoUrl: "",
                     githubUrl: "",
+                },
+                {
+                    id: "mindora",
+                    title: "Mindora",
+                    category: "Fullstack",
+                    type: "personal", 
+                    image: "/projects/mindora.png",
+                    desc: "MINDORA is a mental wellness companion web platform, designed with a gentle, calm, and private approach to help users recognize, nurture, and understand their daily emotional states.",
+                    techs: ["Next.js", "Tailwind CSS", "Supabase"],
+                    demoUrl: "mindora-ivory.vercel.app",
+                    githubUrl: "https://github.com/bimbimm25/mindora.git",
                 },
                 {
                     id: "kantin-digital",
